@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bolh14lihdidi"]
+[gd_scene load_steps=22 format=4 uid="uid://bolh14lihdidi"]
 
 [ext_resource type="PackedScene" uid="uid://c7evhvigiciaw" path="res://scenes/player.tscn" id="1_4hu3r"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_fcry2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dgf0oc8xs3rgx" path="res://scenes/coin.tscn" id="3_mwe1j"]
 [ext_resource type="PackedScene" uid="uid://bwxeiutifi3ul" path="res://scenes/platform.tscn" id="3_sfbxn"]
 [ext_resource type="PackedScene" uid="uid://b1d10iyl4lnqw" path="res://scenes/slime.tscn" id="3_y4qbv"]
+[ext_resource type="AudioStream" uid="uid://1neus3y2mitr" path="res://assets/sounds/jump.wav" id="4_g3df8"]
 [ext_resource type="PackedScene" uid="uid://cfe384i3flb4o" path="res://scenes/kill_zone.tscn" id="5_jpgxw"]
 [ext_resource type="FontFile" uid="uid://klppb2loa2ec" path="res://assets/fonts/PixelOperator8.ttf" id="9_2d57s"]
 
@@ -418,6 +419,11 @@ collision_layer = 2
 position = Vector2(2, -12)
 zoom = Vector2(3, 3)
 limit_bottom = 360
+
+[node name="PlayerJump" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("4_g3df8")
+volume_db = -16.0
+bus = &"SFX"
 
 [node name="TileMap" type="Node" parent="."]
 

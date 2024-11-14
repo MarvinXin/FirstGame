@@ -1,0 +1,133 @@
+[gd_scene load_steps=14 format=3 uid="uid://c7j0ic22g2cfi"]
+
+[ext_resource type="FontFile" uid="uid://klppb2loa2ec" path="res://assets/fonts/PixelOperator8.ttf" id="1_pylm5"]
+[ext_resource type="Script" path="res://scenes/restart_game.gd" id="1_w5rjm"]
+[ext_resource type="Script" path="res://scenes/quit_game.gd" id="2_oap4f"]
+[ext_resource type="Texture2D" uid="uid://blmg5y7g15t3v" path="res://assets/sprites/knight.png" id="4_carr7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2rnf"]
+atlas = ExtResource("4_carr7")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fcm2"]
+atlas = ExtResource("4_carr7")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odh0t"]
+atlas = ExtResource("4_carr7")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkwy1"]
+atlas = ExtResource("4_carr7")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de7s6"]
+atlas = ExtResource("4_carr7")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlxr4"]
+atlas = ExtResource("4_carr7")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc3y8"]
+atlas = ExtResource("4_carr7")
+region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca1iv"]
+atlas = ExtResource("4_carr7")
+region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rhvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2rnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fcm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odh0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkwy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de7s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlxr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc3y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca1iv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 23.0
+offset_right = 448.0
+offset_bottom = 157.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="ColorRect"]
+position = Vector2(148, 87)
+zoom = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 40.0
+offset_right = 463.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("1_pylm5")
+theme_override_font_sizes/font_size = 8
+text = "Congratualation You Win!"
+horizontal_alignment = 1
+
+[node name="Restart Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 111.0
+offset_right = 273.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("1_pylm5")
+theme_override_font_sizes/font_size = 8
+text = "Restart"
+script = ExtResource("1_w5rjm")
+
+[node name="Quit Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 111.0
+offset_right = 426.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("1_pylm5")
+theme_override_font_sizes/font_size = 8
+text = "Quit
+"
+script = ExtResource("2_oap4f")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Area2D"]
+position = Vector2(310, 78)
+scale = Vector2(1.67187, 1.78125)
+sprite_frames = SubResource("SpriteFrames_0rhvb")
+autoplay = "default"
+frame_progress = 0.0749556
